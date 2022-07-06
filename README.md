@@ -1,2 +1,2 @@
 # Skyniv
-Skyniv is a website where you can publish your sky's photos.
+Skyniv is a website where you can view sky's photos.
