@@ -63,5 +63,6 @@
 }
 
 .AtPhrase.dark {
-    color: #313247;
+    font-weight: 600;
+    color: #141416;
 }
