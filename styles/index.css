@@ -91,10 +91,30 @@
 .RecentsPost {
     display: flex;
     flex-direction: column;
-    padding: 1.5em;
-    aspect-ratio: 1 / 1.1;
+    gap: 1.25em;
+    padding: 1.25em;
     width: 100%;
     border: 2px solid var(--primary-light);
     border-radius: 1em;
     box-sizing: border-box;
+}
+
+.RecentsPostImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5em;
+    background-color: var(--primary-light);
+}
+
+.RecentsPostLocation {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--content-primary);
+}
+
+.RecentsPostAuthor {
+    font-size: 0.95em;
+    font-weight: 400;
+    margin-top: -0.75em;
+    color: var(--content-primary);
 }
