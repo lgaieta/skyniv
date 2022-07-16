@@ -75,7 +75,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 1em;
+    gap: 1.25em;
     width: 100%;
     max-width: 615px;
     margin-top: 6em;
@@ -86,4 +86,15 @@
     font-size: 1.2em;
     font-weight: 500;
     color: var(--content-primary);
+}
+
+.RecentsPost {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    aspect-ratio: 1 / 1.1;
+    width: 100%;
+    border: 2px solid var(--primary-light);
+    border-radius: 1em;
+    box-sizing: border-box;
 }
