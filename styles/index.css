@@ -70,3 +70,14 @@
 .MainAuthorLabel a:hover::before {
     opacity: 1;
 }
+
+.Recents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1em;
+    width: 100%;
+    max-width: 615px;
+    background-color: var(--primary-light);
+    margin-top: 5em;
+}
