@@ -1,6 +1,7 @@
 .Main {
     width: 100%;
     min-height: 100vh;
+    background-color: var(--primary);
 }
 
 .Header {
@@ -9,8 +10,8 @@
     right: 0;
     left: 0;
     width: 100%;
-    padding: 0.75em 17em;
-    background-color: #212121;
+    padding: 0.75em 18em;
+    background-color: var(--primary);
     box-sizing: border-box;
 }
 
@@ -22,5 +23,5 @@
     display: inline;
     font-size: 1em;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--content-primary);
 }
