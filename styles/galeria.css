@@ -8,3 +8,17 @@
     box-sizing: border-box;
     background-color: var(--primary);
 }
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    width: min(615px, 100%);
+}
+
+.MainTitle {
+    color: var(--content-primary);
+    font-size: 1.75em;
+    font-weight: 700;
+    text-align: center;
+    margin: 2em 0;
+}
