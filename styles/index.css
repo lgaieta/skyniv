@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 23em;
+    padding: 0 2em;
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     max-width: 615px;
+    width: 100%;
     height: 100%;
 }
 
@@ -72,9 +72,8 @@
 }
 
 .Recents {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-flow: column nowrap;
     gap: 1.25em;
     width: 100%;
     max-width: 615px;
@@ -86,6 +85,13 @@
     font-size: 1.2em;
     font-weight: 500;
     color: var(--content-primary);
+}
+
+.RecentsPostsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    flex-wrap: wrap;
+    gap: 1.25em;
 }
 
 .RecentsPost {
