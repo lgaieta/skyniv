@@ -22,3 +22,34 @@
     text-align: center;
     margin: 2em 0;
 }
+
+.MainPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid var(--primary-light);
+    border-radius: 1em;
+}
+
+.MainPostImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1em 1em 0 0;
+}
+
+.MainPostContent {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.MainPostLocation {
+    color: var(--content-primary);
+    font-weight: 600;
+}
+
+.MainPostAuthor {
+    color: var(--content-primary);
+}
