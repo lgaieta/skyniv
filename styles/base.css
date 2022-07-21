@@ -1,3 +1,7 @@
+:root {
+    --max-width: 615px;
+}
+
 body {
     font-family: 'Inter', sans-serif;
 }

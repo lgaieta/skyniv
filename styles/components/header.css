@@ -13,7 +13,8 @@
 }
 
 .HeaderLogoLink {
-    display: inline;
+    display: flex;
+    align-items: center;
 }
 
 .HeaderLogo {
@@ -47,4 +48,33 @@
 
 .HeaderLink:hover::before {
     opacity: 1;
+}
+
+.HeaderResponsiveNavbar {
+    display: none;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 calc((100% - var(--max-width)) / 2);
+    background-color: var(--primary-light);
+    max-width: var(--max-width);
+    width: 100%;
+}
+
+.HeaderResponsiveNavbarLink {
+    font-size: 1.1rem;
+    color: var(--content-primary);
+    padding: 1rem;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .HeaderResponsiveNavbar {
+        display: flex;
+    }
+
+    .HeaderNavbar {
+        display: none;
+    }
 }
