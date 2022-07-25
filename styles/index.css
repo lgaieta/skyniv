@@ -104,6 +104,11 @@
     border: 2px solid var(--primary-light);
     border-radius: 1em;
     box-sizing: border-box;
+    transition: backdrop-filter 0.3s ease;
+}
+
+.RecentsPost:hover {
+    backdrop-filter: brightness(115%);
 }
 
 .RecentsPostImage {
