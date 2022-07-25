@@ -87,16 +87,11 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 550px) {
-    .MainPostAuthor {
-        text-align: start;
-    }
-}
-
 .PostsGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
     gap: 1.25rem;
     width: 70%;
     height: fit-content;
@@ -106,5 +101,28 @@
     width: 100%;
     height: 100%;
     background-color: blue;
+    aspect-ratio: 16 / 9;
     border-radius: 0.5rem;
+}
+
+.Item.grow-w {
+    grid-column: span 2 / auto;
+}
+
+.Item.grow-h {
+    grid-row: span 2 / auto;
+}
+
+@media screen and (max-width: 550px) {
+    .MainPostAuthor {
+        text-align: start;
+    }
+
+    .Item.grow-h {
+        grid-column: auto;
+    }
+
+    .Item.grow-w {
+        grid-row: auto;
+    }
 }
