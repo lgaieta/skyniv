@@ -113,6 +113,12 @@
     grid-row: span 2 / auto;
 }
 
+@media screen and (max-width: 800px) {
+    .PostsGrid {
+        width: min(var(--max-width), 100%);
+    }
+}
+
 @media screen and (max-width: 550px) {
     .MainPostAuthor {
         text-align: start;
