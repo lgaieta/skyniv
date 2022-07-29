@@ -12,6 +12,18 @@
     box-sizing: border-box;
 }
 
+.Header::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 2.8rem;
+    background-color: var(--primary);
+    z-index: -1;
+}
+
 .HeaderLogoLink {
     display: flex;
     align-items: center;
