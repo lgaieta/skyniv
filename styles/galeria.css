@@ -103,6 +103,7 @@
     background-color: var(--primary-light);
     aspect-ratio: 16 / 9;
     border-radius: 0.5rem;
+    transition: transform 0.3s ease;
 }
 
 .Item.grow-w {
@@ -111,6 +112,10 @@
 
 .Item.grow-h {
     grid-row: span 2 / auto;
+}
+
+.Item:hover {
+    transform: scale(1.025);
 }
 
 @media screen and (max-width: 800px) {
