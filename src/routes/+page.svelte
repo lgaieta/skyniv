@@ -2,30 +2,34 @@
 	<title>Inicio - Skyniv</title>
 </svelte:head>
 
-<main class="Main">
-	<img src="moon.png" class="MainIcon" alt="Luna" />
-	<h1 class="MainTitle">Un lugar para apreciar la belleza del cielo</h1>
-	<a href="/galeria" class="MainCTA">Ver galería</a>
+<main>
+	<section class="Main">
+		<img src="moon.png" class="MainIcon" alt="Luna" />
+		<h1 class="MainTitle">Un lugar para apreciar la belleza del cielo</h1>
+		<a href="/galeria" class="MainCTA">Ver galería</a>
+	</section>
+	<section class="Recents">
+		<h2 class="RecentsTitle">Recientes</h2>
+		<div class="RecentsPostsContainer">
+			<article class="RecentsPost">
+				<img src="foto1.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
+				<h4 class="RecentsPostLocation">Monte Grande, Buenos Aires</h4>
+				<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
+			</article>
+			<article class="RecentsPost">
+				<img src="foto2.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
+				<h4 class="RecentsPostLocation">Luis Guillón, Buenos Aires</h4>
+				<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
+			</article>
+		</div>
+	</section>
+	<section>
+		<p class="MainAuthorLabel">
+			Creado por
+			<a href="https://github.com/lgaieta" target="_blank">Luciano Aieta</a>
+		</p>
+	</section>
 </main>
-<section class="Recents">
-	<h3 class="RecentsTitle">Recientes</h3>
-	<div class="RecentsPostsContainer">
-		<article class="RecentsPost">
-			<img src="foto1.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
-			<h4 class="RecentsPostLocation">Monte Grande, Buenos Aires</h4>
-			<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
-		</article>
-		<article class="RecentsPost">
-			<img src="foto2.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
-			<h4 class="RecentsPostLocation">Luis Guillón, Buenos Aires</h4>
-			<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
-		</article>
-	</div>
-</section>
-<p class="MainAuthorLabel">
-	Creado por
-	<a href="https://github.com/lgaieta" target="_blank">Luciano Aieta</a>
-</p>
 
 <style>
 	.Main {
