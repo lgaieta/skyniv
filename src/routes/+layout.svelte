@@ -1,11 +1,11 @@
 <script>
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
-	let currentTheme = 'dark';
+	let currentTheme = 'light';
 
-	const toggleTheme = () => {
+	function toggleTheme() {
 		currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-	};
+	}
 </script>
 
 <div class="AppContainer {currentTheme}">
@@ -23,9 +23,7 @@
 		min-height: 100vh;
 		box-sizing: border-box;
 		background-color: var(--background-primary);
-	}
 
-	:root {
 		--max-width: 615px;
 
 		/* Colors */
@@ -37,7 +35,9 @@
 		--secondary-brighter: #f1aa9b;
 		--light: #ffffff;
 		--dark: #1f1f1f;
+	}
 
+	.AppContainer.light {
 		/* Content */
 		--content-primary: var(--light);
 		--content-secondary: var(--dark);
@@ -49,7 +49,7 @@
 		--background-secondary-light: var(--secondary-light);
 	}
 
-	.dark {
+	.AppContainer.dark {
 		--content-primary: var(--dark);
 		--content-secondary: var(--light);
 		--background-primary: var(--secondary);
