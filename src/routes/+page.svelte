@@ -23,12 +23,12 @@
 			</article>
 		</div>
 	</section>
-	<section>
+	<footer class="Footer">
 		<p class="MainAuthorLabel">
 			Creado por
 			<a href="https://github.com/lgaieta" target="_blank">Luciano Aieta</a>
 		</p>
-	</section>
+	</footer>
 </main>
 
 <style>
@@ -67,6 +67,11 @@
 
 	.MainCTA:hover {
 		filter: brightness(110%);
+	}
+
+	.Footer {
+		display: flex;
+		justify-content: center;
 	}
 
 	.MainAuthorLabel {
