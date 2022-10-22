@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
-	import Header from '$lib/components/Header.svelte';
+	import Header from '$lib/layouts/Header.svelte';
+	import Footer from '$lib/layouts/Footer.svelte';
 	let currentTheme = 'light';
 
 	function toggleTheme() {
@@ -11,6 +12,7 @@
 <div class="AppContainer {currentTheme}">
 	<Header {toggleTheme} />
 	<slot />
+	<Footer />
 </div>
 
 <style>
