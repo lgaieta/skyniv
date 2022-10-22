@@ -10,19 +10,6 @@
 
 <header class="Header">
 	<a href="./" class="HeaderLogoLink"><p class="HeaderLogo">Skyniv</p> </a>
-	{#if currentWidth && currentWidth <= 600}
-		<nav class="HeaderResponsiveNavbar">
-			<a class="HeaderResponsiveNavbarLink" href="./mañanas">Mañanas</a>
-			<a class="HeaderResponsiveNavbarLink" href="./tardes">Tardes</a>
-			<a class="HeaderResponsiveNavbarLink" href="./noches">Noches</a>
-		</nav>
-	{:else}
-		<nav class="HeaderNavbar">
-			<a class="HeaderLink" href="./mañanas">Mañanas</a>
-			<a class="HeaderLink" href="./tardes">Tardes</a>
-			<a class="HeaderLink" href="./noches">Noches</a>
-		</nav>
-	{/if}
 	<button on:click={toggleTheme} class="SecondaryButton">Cambiar tema</button>
 </header>
 
