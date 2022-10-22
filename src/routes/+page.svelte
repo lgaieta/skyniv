@@ -1,3 +1,7 @@
+<script>
+	import H1 from '$lib/components/headings/H1.svelte';
+</script>
+
 <svelte:head>
 	<title>Inicio - Skyniv</title>
 </svelte:head>
@@ -5,30 +9,9 @@
 <main>
 	<section class="Main">
 		<img src="moon.png" class="MainIcon" alt="Luna" />
-		<h1 class="MainTitle">Un lugar para apreciar la belleza del cielo</h1>
+		<H1>Un lugar para apreciar la belleza del cielo</H1>
 		<a href="/galeria" class="MainCTA">Ver galería</a>
 	</section>
-	<section class="Recents">
-		<h2 class="RecentsTitle">Recientes</h2>
-		<div class="RecentsPostsContainer">
-			<article class="RecentsPost">
-				<img src="foto1.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
-				<h4 class="RecentsPostLocation">Monte Grande, Buenos Aires</h4>
-				<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
-			</article>
-			<article class="RecentsPost">
-				<img src="foto2.jpeg" alt="Foto del cielo" class="RecentsPostImage" />
-				<h4 class="RecentsPostLocation">Luis Guillón, Buenos Aires</h4>
-				<h4 class="RecentsPostAuthor">Tomada por Anónimo</h4>
-			</article>
-		</div>
-	</section>
-	<footer class="Footer">
-		<p class="MainAuthorLabel">
-			Creado por
-			<a href="https://github.com/lgaieta" target="_blank">Luciano Aieta</a>
-		</p>
-	</footer>
 </main>
 
 <style>
@@ -36,22 +19,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		max-width: 615px;
+		max-width: var(--max-width);
 		width: 100%;
 		height: 100%;
 	}
 
 	.MainIcon {
-		width: 10em;
+		width: 10rem;
 		border-radius: 50%;
-		margin: 3.5em 0;
-	}
-
-	.MainTitle {
-		color: var(--content-primary);
-		font-size: 1.75em;
-		font-weight: 700;
-		text-align: center;
+		margin: 3.5rem 0;
 	}
 
 	.MainCTA {
@@ -69,42 +45,12 @@
 		filter: brightness(110%);
 	}
 
-	.Footer {
-		display: flex;
-		justify-content: center;
-	}
-
-	.MainAuthorLabel {
-		margin: 5em 0;
-		color: var(--content-primary);
-	}
-
-	.MainAuthorLabel a {
-		display: inline;
-		position: relative;
-		font-weight: 600;
-	}
-
-	.MainAuthorLabel a::before {
-		opacity: 0;
-		position: absolute;
-		bottom: -2px;
-		content: '';
-		width: 100%;
-		height: 2px;
-		background-color: var(--content-primary);
-	}
-
-	.MainAuthorLabel a:hover::before {
-		opacity: 1;
-	}
-
 	.Recents {
 		display: flex;
 		flex-flow: column nowrap;
 		gap: 1.25em;
 		width: 100%;
-		max-width: 615px;
+		max-width: var(--max-width);
 		margin-top: 6em;
 	}
 
