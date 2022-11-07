@@ -1,11 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	export let toggleTheme: () => void;
-
-	let currentWidth: number | null = null;
-
-	onMount(() => (currentWidth = screen.availWidth));
 </script>
 
 <header class="Header">
@@ -27,6 +21,7 @@
 		background-color: var(--background-primary);
 		box-sizing: border-box;
 		z-index: 10;
+		border-bottom: 1px solid var(--background-primary-light);
 	}
 
 	.HeaderLogoLink {
@@ -42,7 +37,6 @@
 	}
 
 	.SecondaryButton {
-		padding: 0 1em;
 		font-weight: 500;
 		font-size: 1em;
 		border-radius: 8px;

@@ -26,7 +26,7 @@
 		box-sizing: border-box;
 		background-color: var(--background-primary);
 
-		--max-width: 615px;
+		--max-width: 700px;
 
 		/* Colors */
 		/* Primitive */
