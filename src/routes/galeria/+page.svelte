@@ -1,6 +1,12 @@
 <script lang="ts">
 	import H1 from '$lib/components/headings/H1.svelte';
+	import type Post from '$lib/models/Post';
 	export let data: any;
+	let postsList: Post[];
+	$: {
+		postsList = Object.values(data);
+		console.log(postsList);
+	}
 </script>
 
 <svelte:head>
@@ -10,11 +16,12 @@
 <main class="Main">
 	<div class="TitleContainer"><H1>Galería</H1></div>
 	<div class="PhotosList">
-		{#each data.results as image}
+		{#each postsList as image}
 			<div class="PhotoContainer">
-				<img src={image.urls.regular} alt={image.description} />
+				<img src={image.image} alt={image.title} />
 				<div class="PhotoInfo">
-					<p class="PhotoAuthor">{image.user.name}</p>
+					<p>{image.title}</p>
+					<p class="PhotoAuthor">{image.user}</p>
 				</div>
 			</div>
 		{/each}
