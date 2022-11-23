@@ -1,3 +1,8 @@
 export default interface ImageRepository {
-	save(Image: Blob, name: string): Promise<string>;
+	getImageLocation(name: string): string;
+	saveImage(
+		imageBinary: ArrayBuffer,
+		imageName: string,
+		authorizationToken?: string
+	): Promise<void>;
 }

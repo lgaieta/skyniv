@@ -5,7 +5,6 @@
 	let postsList: Post[];
 	$: {
 		postsList = Object.values(data);
-		console.log(postsList);
 	}
 </script>
 

@@ -1,9 +1,7 @@
 import type ImageRepository from '$lib/models/ImageRepository';
 
 class SirvImageRepository implements ImageRepository {
-	token: string | null = null;
-
-	async getToken(clientId: string, clientSecret: string): Promise<string> {
+	public async getToken(clientId: string, clientSecret: string): Promise<string> {
 		try {
 			const response = await fetch('https://api.sirv.com/v2/token', {
 				method: 'POST',
@@ -20,25 +18,24 @@ class SirvImageRepository implements ImageRepository {
 		}
 	}
 
-	async save(image: Blob, name: string): Promise<string> {
-		const url = 'https://api.sirv.com/v2/files/upload?filename=/skyniv/' + name + '.jpeg';
-		return fetch(url, {
+	public async saveImage(
+		imageBinary: ArrayBuffer,
+		imageName: string,
+		authorizationToken: string
+	): Promise<void> {
+		const url = 'https://api.sirv.com/v2/files/upload?filename=/skyniv/' + imageName + '.jpeg';
+
+		await fetch(url, {
 			method: 'POST',
-			body: await image.arrayBuffer(),
+			body: imageBinary,
 			headers: {
 				'Content-Type': 'image/jpeg',
-				Authorization: this.token || ''
+				Authorization: authorizationToken
 			}
-		})
-			.then((response) => {
-				console.log(response.status);
-				return 'https://fisednar.sirv.com/skyniv/' + name + '.jpeg';
-			})
-			.catch((e) => {
-				console.log('Error: ', e);
-				throw 'Ha ocurrido un error';
-			});
+		});
 	}
+
+	public getImageLocation = (name: string) => 'https://fisednar.sirv.com/skyniv/' + name + '.jpeg';
 }
 
 export default SirvImageRepository;

@@ -6,18 +6,18 @@ type IncomingPost = {
 	image: Blob;
 	location: string;
 	description: string;
+	user: string;
 };
 
 class MySQLPostRepository implements PostRepository {
-	async save(post: IncomingPost): Promise<void> {
-		const { title, description, location } = post;
-		const image = post.image;
+	public async save(post: IncomingPost): Promise<void> {
+		const { title, description, location, image, user } = post;
 		const db = await getDBConnection();
 		await db.connect();
 
 		await db.query(
 			'insert into post (title, description, location, image, user) values (?, ?, ?, ?, "lgaieta")',
-			[title, description, location, image]
+			[title, description, location, image, user]
 		);
 		await db.commit();
 	}

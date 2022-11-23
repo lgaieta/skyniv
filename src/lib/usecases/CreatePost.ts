@@ -1,20 +1,35 @@
 import type ImageRepository from '$lib/models/ImageRepository';
-import type Post from '$lib/models/Post';
 import type PostRepository from '$lib/models/PostRepository';
 
-class CreatePost {
-	private repository: PostRepository;
-	private imageRepository: ImageRepository;
+type CreatePostParams = {
+	SaveImage: ImageRepository['saveImage'];
+	GetImageLocation: ImageRepository['getImageLocation'];
+	SavePost: PostRepository['save'];
+};
 
-	constructor(repository: PostRepository, imageRepository: ImageRepository) {
-		this.repository = repository;
-		this.imageRepository = imageRepository;
+type IncomingPost = {
+	title: string;
+	description: string;
+	imageBinary: ArrayBuffer;
+	location: string;
+	user: string;
+};
+
+class CreatePost {
+	private SaveImage: ImageRepository['saveImage'];
+	private GetImageLocation: ImageRepository['getImageLocation'];
+	private SavePost: PostRepository['save'];
+
+	constructor({ SaveImage, GetImageLocation, SavePost }: CreatePostParams) {
+		this.SaveImage = SaveImage;
+		this.GetImageLocation = GetImageLocation;
+		this.SavePost = SavePost;
 	}
 
-	public async run(post: Omit<Post, 'id_post'>) {
-		const imageUrl = await this.imageRepository.save(post.image as Blob, post.title);
-		const postWithImage = { ...post, image: imageUrl };
-		await this.repository.save(postWithImage);
+	async run(post: IncomingPost) {
+		await this.SaveImage(post.imageBinary, post.title);
+		const imageLocation = this.GetImageLocation(post.title);
+		await this.SavePost({ ...post, image: imageLocation });
 	}
 }
 
