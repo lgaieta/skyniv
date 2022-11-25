@@ -14,13 +14,13 @@
 
 <main class="Main">
 	<div class="TitleContainer"><H1>Galería</H1></div>
-	<div class="PhotosList">
-		{#each postsList as image}
-			<div class="PhotoContainer">
-				<img src={image.image} alt={image.title} />
-				<div class="PhotoInfo">
-					<p>{image.title}</p>
-					<p class="PhotoAuthor">{image.user}</p>
+	<div class="PostList">
+		{#each postsList as post}
+			<div class="PostContainer">
+				<img src={post.image} alt={post.title} />
+				<div class="PostInfo">
+					<p class="PostTitle">{post.title}</p>
+					<p class="PostAuthor">{post.user}</p>
 				</div>
 			</div>
 		{/each}
@@ -39,7 +39,7 @@
 		margin-top: 3.5rem;
 	}
 
-	.PhotosList {
+	.PostList {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -48,7 +48,7 @@
 		max-width: var(--max-width);
 	}
 
-	.PhotoContainer {
+	.PostContainer {
 		display: flex;
 		flex-direction: column;
 		width: 90%;
@@ -56,16 +56,20 @@
 		border-radius: 1rem;
 	}
 
-	.PhotoContainer img {
+	.PostContainer img {
 		aspect-ratio: 16 / 9;
 		border-radius: 1rem 1rem 0 0;
 	}
 
-	.PhotoInfo {
+	.PostInfo {
 		display: flex;
 		justify-content: space-between;
 		padding: 1rem;
 		box-sizing: border-box;
 		color: var(--content-primary);
+	}
+
+	.PostTitle {
+		font-weight: 700;
 	}
 </style>
