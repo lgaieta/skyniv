@@ -1,4 +1,5 @@
 <script>
+	import Button from '$lib/components/Button.svelte';
 	import H1 from '$lib/components/headings/H1.svelte';
 </script>
 
@@ -10,7 +11,7 @@
 	<section class="Main">
 		<img src="moon.png" class="MainIcon" alt="Luna" />
 		<H1>Un lugar para apreciar la belleza del cielo</H1>
-		<a href="/galeria" class="MainCTA">Ver galería</a>
+		<a href="/galeria" class="MainCTA"><Button variant="primary">Ver galería</Button></a>
 	</section>
 </main>
 
@@ -31,17 +32,6 @@
 	}
 
 	.MainCTA {
-		margin-top: 1.5em;
-		padding: 0.75em 1.5em;
-		font-weight: 600;
-		font-size: 1em;
-		border-radius: 8px;
-		color: var(--content-secondary);
-		background-color: var(--background-secondary);
-		transition: filter 0.3s ease;
-	}
-
-	.MainCTA:hover {
-		filter: brightness(110%);
+		margin-top: 1.5rem;
 	}
 </style>

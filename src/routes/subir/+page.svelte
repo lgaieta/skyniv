@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import Button from '$lib/components/Button.svelte';
 	import H1 from '$lib/components/headings/H1.svelte';
 </script>
 
@@ -17,7 +18,8 @@
 		<input name="image" type="file" accept="image/jpg, image/jpeg, image/png" />
 		<label for="location">Ubicación</label>
 		<input name="location" type="text" placeholder="Por ejemplo: Monte Grande, Buenos Aires" />
-		<input type="submit" value="Subir imagen" />
+		<label for="saveImage"><Button variant="primary" fullWidth>Subir</Button></label>
+		<input type="submit" name="saveImage" />
 	</form>
 </main>
 
@@ -73,26 +75,6 @@
 	}
 
 	input[type='submit'] {
-		font-size: 1.1rem;
-		font-weight: 700;
-		font-family: inherit;
-
-		color: var(--content-secondary);
-		background-color: var(--background-secondary);
-
-		border: 2px solid transparent;
-		border-radius: 0.5rem;
-		outline: none;
-
-		width: 100%;
-		padding: 1rem;
-		margin-top: 1.5rem;
-		box-sizing: border-box;
-
-		cursor: pointer;
-	}
-
-	input[type='submit']:focus {
-		border: 2px solid #fff;
+		display: none;
 	}
 </style>

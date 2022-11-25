@@ -1,10 +1,10 @@
 <script lang="ts">
-	export let toggleTheme: () => void;
+	import Button from '$lib/components/Button.svelte';
 </script>
 
 <header class="Header">
-	<a href="./" class="HeaderLogoLink"><p class="HeaderLogo">Skyniv</p> </a>
-	<button on:click={toggleTheme} class="SecondaryButton">Cambiar tema</button>
+	<a href="./" class="HeaderLogoLink"><p class="HeaderLogo">Skyniv</p></a>
+	<a href="/subir"><Button variant="secondary" compact>Subir imagen</Button></a>
 </header>
 
 <style>
@@ -34,15 +34,5 @@
 		font-size: 1em;
 		font-weight: 600;
 		color: var(--content-primary);
-	}
-
-	.SecondaryButton {
-		font-weight: 500;
-		font-size: 1em;
-		border-radius: 8px;
-		background: transparent;
-		border: none;
-		color: var(--background-secondary);
-		transition: filter 0.3s ease;
 	}
 </style>
