@@ -3,7 +3,7 @@
 </script>
 
 <header class="Header">
-	<a href="./" class="HeaderLogoLink"><p class="HeaderLogo">Skyniv</p></a>
+	<a href="/" class="HeaderLogoLink"><p class="HeaderLogo">Skyniv</p></a>
 	<a href="/subir"><Button variant="secondary" compact>Subir imagen</Button></a>
 </header>
 
