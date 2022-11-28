@@ -34,6 +34,17 @@ class MySQLPostRepository implements PostRepository {
 
 		return result;
 	}
+
+	public async getById(id: string): Promise<Post> {
+		const db = await getDBConnection();
+		await db.connect();
+		const [result] = (await db.query<RowDataPacket[]>(
+			'select * from post where id_post = ?',
+			id
+		)) as [Post[], FieldPacket[]];
+
+		return result[0];
+	}
 }
 
 export default MySQLPostRepository;

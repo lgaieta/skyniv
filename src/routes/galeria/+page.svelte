@@ -16,13 +16,13 @@
 	<div class="TitleContainer"><H1>Galería</H1></div>
 	<div class="PostList">
 		{#each postsList as post}
-			<div class="PostContainer">
+			<a href="/post/{String(post.id_post)}" class="PostContainer">
 				<img src={post.image} alt={post.title} />
 				<div class="PostInfo">
 					<p class="PostTitle">{post.title}</p>
 					<p class="PostAuthor">{post.user}</p>
 				</div>
-			</div>
+			</a>
 		{/each}
 	</div>
 </main>
